@@ -30,4 +30,7 @@ Route::middleware([
     Route::get('/data-table', function () {
         return Inertia::render('DataTable');
     })->name('data-table');
+    Route::get('/onboarding', function () {
+        return Inertia::render('OnBoarding');
+    })->name('onboarding');
 });
