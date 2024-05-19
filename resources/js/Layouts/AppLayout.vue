@@ -27,6 +27,7 @@ const logout = () => {
     router.post(route('logout'));
 };
 
+
 </script>
 
 <template>
@@ -64,12 +65,19 @@ const logout = () => {
                                 <NavLink :href="route('data-table')" :active="route().current('data-table')">
                                     DataTable
                                 </NavLink>
+                                <NavLink :href="route('dashtest')" :active="route().current('dashtest')">
+                                    DashTest
+                                </NavLink>
 
                             </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <div class="ms-3 relative">
+                                <button id="fullscreen-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="hover:bg-gray-100 rounded-full" viewBox="0 0 24 24" style="fill: gray;">
+                                        <path d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z"></path></svg>
+                                </button>
                                 <!-- Teams Dropdown -->
                                 <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="right" width="60">
                                     <template #trigger>
@@ -301,3 +309,24 @@ const logout = () => {
         </div>
     </div>
 </template>
+
+<script>
+const fullscreenButton = document.getElementById('fullscreen-button');
+
+if (fullscreenButton) {
+    fullscreenButton.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch((err) => {
+                console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    });
+}
+
+export default {
+    name: 'FullscreenButton',
+};
+
+</script>

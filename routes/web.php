@@ -33,4 +33,7 @@ Route::middleware([
     Route::get('/onboarding', function () {
         return Inertia::render('OnBoarding');
     })->name('onboarding');
+    Route::get('/dashtest', function () {
+        return Inertia::render('DashTest');
+    })->name('dashtest');
 });

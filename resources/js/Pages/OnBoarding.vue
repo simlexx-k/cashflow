@@ -2,6 +2,7 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import 'flowbite';
 import SideNavigation from "@/Pages/Onboarding/Patials/SideNavigation.vue";
+import Overview from "@/Pages/Onboarding/Patials/Overview.vue";
 
 </script>
 
@@ -18,6 +19,7 @@ import SideNavigation from "@/Pages/Onboarding/Patials/SideNavigation.vue";
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
                     <SideNavigation />
                 </div>
+
             </div>
         </div>
     </AppLayout>
