@@ -53,6 +53,7 @@ import 'flowbite';
             </div>
         </div>
     </div>
+
 </template>
 
 <style scoped>
